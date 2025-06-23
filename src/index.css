@@ -1,8 +1,9 @@
 @import "tailwindcss";
-
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @theme {
-  --font-display: "Poppins", "sans-serif";
-
+  --font-display: "Merriweather", "serif";
+  --font-headline: "Caprasimo", "serif";
+  
    --color-primary: #dc2626; /* red-600 */
   --color-secondary: #fb923c; /* amber-400 */
 /* Container width */
