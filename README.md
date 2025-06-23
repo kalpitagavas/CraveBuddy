@@ -1,17 +1,38 @@
-<<<<<<< HEAD
-# React + Vite
+# CraveBuddy 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CraveBuddy is a responsive and stylish navigation bar component built using **React**, **Tailwind CSS**, and **React Icons**. It features a branded logo, intuitive navigation links, and a cart icon — ideal for food delivery, restaurant, or ecommerce sites.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Responsive navbar with mobile-friendly design
+- ✅ Brand logo using `react-icons` (`TbChefHat`)
+- ✅ Navigation links for: Home, Product, About, Shop, Contact
+- ✅ Shopping cart icon using `FaCartShopping`
+- ✅ Clean layout with `flex`, `gap`, and spacing utilities
+- ✅ Tailwind utility classes for styling
+- ✅ Easily extensible for full site navigation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# CraveBuddy
-Food Website
->>>>>>> c5d4ee8801200011ff2ec4900faeb28a0dafd66f
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+
+---
+
+## 💡 Setup Instructions
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/kalpitagavas/CraveBuddy.git
+cd cravebuddy
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
