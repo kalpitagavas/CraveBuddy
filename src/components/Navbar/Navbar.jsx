@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbChefHat, TbMenu, TbMenu2 } from "react-icons/tb";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -13,6 +13,21 @@ const NavbarMenu = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+ 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setOpen(false);
+      }
+    };
+
+    // Listen to resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <nav>
@@ -49,7 +64,7 @@ const Navbar = () => {
                 <FaCartShopping />
               </button>
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden" onClick={()=>setOpen(!open)}>
               <TbMenu2 className="text-4xl" />
             </div>
           </div>
