@@ -1,13 +1,15 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
 @theme {
   --font-display: "Merriweather", "serif";
   --font-headline: "Caprasimo", "serif";
-  
-   --color-primary: #dc2626; /* red-600 */
+
+  --color-primary: #dc2626; /* red-600 */
   --color-secondary: #fb923c; /* amber-400 */
-/* Container width */
- --container-xs: 320px;
+
+  /* Container width */
+  --container-xs: 320px;
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
@@ -20,4 +22,18 @@
   --container-padding-lg: 4rem;
   --container-padding-xl: 5rem;
   --container-padding-2xl: 6rem;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* Hide vertical scrollbar across browsers */
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
 }

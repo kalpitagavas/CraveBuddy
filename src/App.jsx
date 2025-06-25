@@ -1,5 +1,7 @@
 import "./App.css";
 import CategoryGallery from "./components/Category/CategoryGallery";
+import Accordion from "./components/FAQData/Accordion";
+import Footer from "./components/Footer/Footer";
 import InfoDiv from "./components/Information/InfoDiv";
 import Menus from "./components/Menus/Menus";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,7 +13,9 @@ function App() {
         <Navbar />
         <Menus />
         <CategoryGallery />
-        <InfoDiv/>
+        <InfoDiv />
+        <Accordion />
+        <Footer/>
       </main>
     </>
   );

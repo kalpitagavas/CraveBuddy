@@ -37,12 +37,13 @@ const menuItems = [
 
 const Menus = () => {
   return (
-    <div className="grid gap-20 p-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+    <div className="grid gap-20 p-16 -mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
       {menuItems.map((menu, index) => (
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.07, y: -2 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, type: "spring", stiffness: 400 }}
           key={index}
           className="relative flex items-center shadow-lg rounded-xl px-6 py-4"
@@ -55,10 +56,18 @@ const Menus = () => {
           />
 
           {/* Content with padding so it doesn't overlap image */}
-          <div className="pl-20">
+          <div className="pl-20 ">
             <h1 className="text-md font-bold font-headline">{menu.name}</h1>
             <p className="text-sm text-gray-600 mt-1">{menu.description}</p>
-            <p className="text-green-600 font-semibold mt-2">{menu.price}</p>
+            <div className="flex justify-end pr-5">
+              <p
+                className="text-secondary hover:text-white hover:bg-amber-600 
+    bg-amber-100 rounded-2xl w-20 h-10 font-semibold 
+    flex items-center justify-center text-sm transition-all duration-200"
+              >
+                {menu.price}
+              </p>
+            </div>
           </div>
         </motion.div>
       ))}

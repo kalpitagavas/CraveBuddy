@@ -13,7 +13,7 @@ const NavbarMenu = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
- 
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -32,7 +32,7 @@ const Navbar = () => {
     <>
       <nav>
         <div className="w-full bg-white">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-6">
+          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-12">
             {/* Logo Section */}
             <div className="flex items-center gap-1">
               <p className="relative text-primary font-bold text-3xl">
@@ -64,7 +64,7 @@ const Navbar = () => {
                 <FaCartShopping />
               </button>
             </div>
-            <div className="lg:hidden" onClick={()=>setOpen(!open)}>
+            <div className="lg:hidden" onClick={() => setOpen(!open)}>
               <TbMenu2 className="text-4xl" />
             </div>
           </div>
