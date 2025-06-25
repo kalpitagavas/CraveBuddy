@@ -19,12 +19,12 @@ const menuItems = [
       "Classic pizza with fresh mozzarella, basil, and tomato sauce.",
     image: CartPizza,
   },
-  {
-    name: "Chicken Biryani",
-    price: "₹129",
-    description: "Corn chips loaded with cheese, beans, and jalapeños.",
-    image: CartBiryani,
-  },
+  // {
+  //   name: "Chicken Biryani",
+  //   price: "₹129",
+  //   description: "Corn chips loaded with cheese, beans, and jalapeños.",
+  //   image: CartBiryani,
+  // },
 
   {
     name: "Chocolate Brownie",
@@ -37,7 +37,7 @@ const menuItems = [
 
 const Menus = () => {
   return (
-    <div className="grid gap-20 p-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid gap-20 p-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
       {menuItems.map((menu, index) => (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
