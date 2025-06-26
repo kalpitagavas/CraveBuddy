@@ -20,7 +20,7 @@ const categories = [
   { name: "Sweets", img: KababImg },
   { name: "Kulfi", img: DessertImg },
   { name: "Biryani", img: BiryaniImg },
-  { name: "Biryani", img: BiryaniImg },
+  
 ];
 
 // Animation Variants
@@ -57,6 +57,7 @@ const CategoryGallery = () => {
         variants={containerVariants}
         initial="hidden"
         animate="show"
+        
       >
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-wrap justify-center gap-6">
@@ -67,10 +68,11 @@ const CategoryGallery = () => {
                 className="text-center"
               >
                 <div className="w-28 h-28 rounded-full overflow-hidden mx-auto ">
-                  <img
+                  <motion.img
                     src={category.img}
                     alt={category.name}
                     className="w-full h-full object-cover"
+                    
                   />
                 </div>
                 <p className="mt-2 text-sm font-medium">{category.name}</p>

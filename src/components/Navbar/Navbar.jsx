@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbChefHat, TbMenu, TbMenu2 } from "react-icons/tb";
 import ResponsiveMenu from "./ResponsiveMenu";
-
+import { motion } from "framer-motion";
 const NavbarMenu = [
   { id: 1, title: "Home", link: "/" },
   { id: 2, title: "Product", link: "#" },
@@ -31,8 +31,17 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="w-full bg-white">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-12">
+        
+        <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 shadow-md">
+            <motion.div
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5 }}
+  className="w-full bg-primary text-white text-center py-3 px-4 text-sm md:text-base font-medium shadow-md"
+>
+               🎁 Just scroll down to grab the best offers! Use coupon codes & enjoy discounts.
+           </motion.div>
+          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
             {/* Logo Section */}
             <div className="flex items-center gap-1">
               <p className="relative text-primary font-bold text-3xl">
