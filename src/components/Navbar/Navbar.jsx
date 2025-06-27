@@ -3,9 +3,10 @@ import { FaCartShopping } from "react-icons/fa6";
 import { TbChefHat, TbMenu, TbMenu2 } from "react-icons/tb";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const NavbarMenu = [
   { id: 1, title: "Home", link: "/" },
-  { id: 2, title: "Product", link: "#" },
+  { id: 2, title: "Product", link: "/products" },
   { id: 3, title: "About", link: "#" },
   { id: 4, title: "Shop", link: "#" },
   { id: 5, title: "Contact", link: "#" },
@@ -34,11 +35,11 @@ const Navbar = () => {
         
         <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 shadow-md">
             <motion.div
-  initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.5 }}
-  className="w-full bg-primary text-white text-center py-3 px-4 text-sm md:text-base font-medium shadow-md"
->
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full bg-primary text-white text-center py-3 px-4 text-sm md:text-base font-medium shadow-md"
+          >
                🎁 Just scroll down to grab the best offers! Use coupon codes & enjoy discounts.
            </motion.div>
           <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -59,12 +60,12 @@ const Navbar = () => {
                     key={menu.id}
                     className="hover:text-primary transition-colors duration-300"
                   >
-                    <a
+                    <Link
                       href={menu.link}
                       className="inline-block px3 py-1 hover:shadow[0_3px_0_-1px_#ef4444] font-semibold"
                     >
                       {menu.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

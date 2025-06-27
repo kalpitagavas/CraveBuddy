@@ -1,14 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import BiryaniImg from "../../assets/CartBiryani.png";
-import NorthIndianImg from "../../assets/NorthIndianImg.png";
-import SouthIndianImg from "../../assets/SouthIndianImg.png";
-import ThaliImg from "../../assets/ThaliImg.png";
-import PizzaImg from "../../assets/CartPizza.png";
-import PunjabiImg from "../../assets/IndiaSpecial.png";
-import KababImg from "../../assets/CartPizza.png";
-import DessertImg from "../../assets/DesertImg.png";
+import BiryaniImg from "../../../assets/CartBiryani.jpg"
+import NorthIndianImg from "../../../assets/NorthIndianImg.png";
+import SouthIndianImg from "../../../assets/SouthIndianImg.png";
+import ThaliImg from "../../../assets/ThaliImg.png";
+
+import PizzaImg from "../../../assets/CartPizza.png";
+import PunjabiImg from "../../../assets/IndiaSpecial.png";
+
+import KababImg from "../../../assets/CartPizza.png";
+import DessertImg from "../../../assets/DesertImg.png";
 
 const categories = [
   { name: "North Indian", img: NorthIndianImg },
