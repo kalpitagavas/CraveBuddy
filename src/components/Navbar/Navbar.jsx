@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav>
+      <nav className="fixed top-0 left-0 w-full h-20 bg-white shadow z-50">
         
         <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 shadow-md">
             <motion.div
@@ -61,7 +61,7 @@ const Navbar = () => {
                     className="hover:text-primary transition-colors duration-300"
                   >
                     <Link
-                      href={menu.link}
+                        to={menu.link}
                       className="inline-block px3 py-1 hover:shadow[0_3px_0_-1px_#ef4444] font-semibold"
                     >
                       {menu.title}

@@ -15,13 +15,13 @@ import DessertImg from "../../../assets/DesertImg.png";
 const categories = [
   { name: "North Indian", img: NorthIndianImg },
   { name: "South Indian", img: SouthIndianImg },
-  { name: "Biryani", img: BiryaniImg },
+  { name: "Biryani", img: DessertImg },
   { name: "Thali", img: ThaliImg },
   { name: "Chaat", img: PizzaImg },
   { name: "Vada Pav", img: DessertImg },
   { name: "Sweets", img: KababImg },
   { name: "Kulfi", img: DessertImg },
-  { name: "Biryani", img: BiryaniImg },
+  { name: "Biryani", img: SouthIndianImg },
   
 ];
 

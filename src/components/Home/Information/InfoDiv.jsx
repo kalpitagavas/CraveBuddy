@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Indiamapfood from "../../assets/Indiamapfood.png";
+import Indiamapfood from "../../../assets/Indiamapfood.png";
 
 const InfoDiv = () => {
   return (

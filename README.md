@@ -1,35 +1,70 @@
-# CraveBuddy 🍽️
+# 🍽️ CraveBuddy
 
-CraveBuddy is a responsive and stylish navigation bar component built using **React**, **Tailwind CSS**, and **React Icons**. It features a branded logo, intuitive navigation links, and a cart icon — ideal for food delivery, restaurant, or ecommerce sites.
+**CraveBuddy** is a sleek and responsive food-focused web application built with **React**, **Tailwind CSS**, and **React Icons**. It features a fully modular layout with reusable components, a modern product grid, and a vibrant UI — ideal for food delivery, restaurants, or ecommerce platforms.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Responsive navbar with mobile-friendly design
-- ✅ Brand logo using `react-icons` (`TbChefHat`)
-- ✅ Navigation links for: Home, Product, About, Shop, Contact
-- ✅ Shopping cart icon using `FaCartShopping`
-- ✅ Clean layout with `flex`, `gap`, and spacing utilities
-- ✅ Tailwind utility classes for styling
-- ✅ Easily extensible for full site navigation
+- ✅ Fully responsive layout using Tailwind CSS
+- ✅ Animated and interactive components using Framer Motion
+- ✅ Brand-themed navigation bar with:
+  - Logo icon (`TbChefHat`)
+  - Links: Home, Product, About, Shop, Contact
+  - Shopping cart icon (`FaCartShopping`)
+- ✅ **Home Page** includes:
+  - Hero section/banner
+  - Informational sections (Why Choose Us, How it Works, etc.)
+  - Featured Food Cards
+  - Food Menu with category filters
+  - Footer with useful links and contact
+- ✅ **Product Page** includes:
+  - Trending Products heading
+  - Filter buttons (Skincare, Electronics, etc.)
+  - Dynamic Product Cards
+  - Sidebar with sponsored promotions/ads
+- ✅ Modern card designs with hover animations
+- ✅ Reusable and scalable component-based structure
 
 ---
 
 ## 🛠️ Tech Stack
 
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [React Icons](https://react-icons.github.io/react-icons/)
+| Tech              | Usage                                     |
+|-------------------|--------------------------------------------|
+| [React](https://reactjs.org/)           | UI Library                           |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling                 |
+| [React Icons](https://react-icons.github.io/react-icons/) | Icons and graphics                   |
+| [Framer Motion](https://www.framer.com/motion/) | Animations                           |
+| [Vite](https://vitejs.dev/)             | Frontend build tool                   |
 
 ---
 
-## 💡 Setup Instructions
+## 📂 Project Structure
 
 ```bash
+src/
+├── assets/              # Images, icons, etc.
+├── components/
+│   ├── Navbar.jsx       # Top navigation
+│   ├── Footer.jsx       # Footer section
+│   ├── ProductCard.jsx  # Product display card
+│   ├── FoodCard.jsx     # Home page food cards
+│   ├── InfoBlock.jsx    # Informational UI blocks
+│   └── ...more reusable components
+├── pages/
+│   ├── Home.jsx         # Homepage layout
+│   └── Products.jsx     # Product listing page
+├── data/
+│   ├── products.js      # Product data for cards
+│   └── foodItems.js     # Featured food menu items
+├── App.jsx              # App routing and layout
+└── main.jsx             # Entry point
+
+
 # 1. Clone the repository
 git clone https://github.com/kalpitagavas/CraveBuddy.git
-cd cravebuddy
+cd CraveBuddy
 
 # 2. Install dependencies
 npm install

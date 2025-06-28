@@ -1,8 +1,8 @@
 import React from "react";
-import CartBurger from "../../assets/CartBurger.png";
-import CartPizza from "../../assets/CartPizza.png";
-import CartBiryani from "../../assets/CartBiryani.png";
-import CartIce from "../../assets/CartIce.png";
+import CartBurger from "../../../assets/CartBurger.png";
+import CartPizza from "../../../assets/CartPizza.png";
+import CartBiryani from "../../../assets/CartBiryani.png";
+import CartIce from "../../../assets/CartIce.png";
 
 import { motion } from "framer-motion";
 const menuItems = [
