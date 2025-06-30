@@ -4,7 +4,7 @@ import { FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
 import { useCart } from '../Cart/CartProvider';
 
 const ProductCard = ({ product, layout = 'grid' }) => {
-  const { addToCart, toggleCart } = useCart()
+  const { addToCart, toggleCart,isOpen } = useCart()
   if (!product) return <div>Loading...</div>;
 
   const isList = layout === 'list';
@@ -65,8 +65,8 @@ const ProductCard = ({ product, layout = 'grid' }) => {
           </span>
           <button
   onClick={() => {
-    addToCart(product);   
-    toggleCart();         
+     addToCart(product);   
+     if (!isOpen) toggleCart();       
   }}
   className="flex items-center gap-1 bg-secondary text-white text-xs px-3 py-1.5 rounded hover:bg-amber-700 transition"
 >
