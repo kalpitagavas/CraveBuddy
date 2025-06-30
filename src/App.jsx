@@ -1,4 +1,5 @@
 import "./App.css";
+import CartDrawer from "./components/Cart/CartDrawer";
 
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
       </Routes>
+       <CartDrawer /> 
     </main>
   );
 }

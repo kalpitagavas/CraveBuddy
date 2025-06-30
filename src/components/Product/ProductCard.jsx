@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
+import { useCart } from '../Cart/CartProvider';
 
 const ProductCard = ({ product, layout = 'grid' }) => {
+  const { addToCart, toggleCart } = useCart()
   if (!product) return <div>Loading...</div>;
 
   const isList = layout === 'list';
@@ -61,10 +63,17 @@ const ProductCard = ({ product, layout = 'grid' }) => {
           <span className="text-sm font-semibold text-gray-800">
             ₹{product.price}
           </span>
-          <button className="flex items-center gap-1 bg-secondary text-white text-xs px-3 py-1.5 rounded hover:bg-amber-700 transition">
-            <FaShoppingCart />
-            Add to Cart
-          </button>
+          <button
+  onClick={() => {
+    addToCart(product);   // ➕ Add to cart
+    toggleCart();         // 🛒 Open cart drawer
+  }}
+  className="flex items-center gap-1 bg-secondary text-white text-xs px-3 py-1.5 rounded hover:bg-amber-700 transition"
+>
+  <FaShoppingCart />
+  Add to Cart
+</button>
+
         </div>
       </div>
     </motion.div>

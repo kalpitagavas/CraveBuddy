@@ -4,6 +4,7 @@ import { TbChefHat, TbMenu, TbMenu2 } from "react-icons/tb";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useCart } from "../Cart/CartProvider";
 const NavbarMenu = [
   { id: 1, title: "Home", link: "/" },
   { id: 2, title: "Product", link: "/products" },
@@ -14,6 +15,7 @@ const NavbarMenu = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const {cartItems,toggleCart}=useCart()
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,9 +72,13 @@ const Navbar = () => {
                 ))}
               </ul>
 
-              <button className="text-2xl cursor-pointer hover:bg-primary hover:text-white rounded-full  duration-200 pt-4 pl-4 pb-4 pr-4">
-                <FaCartShopping />
-              </button>
+            <button onClick={toggleCart} className="relative text-2xl cursor-pointer hover:bg-primary hover:text-white rounded-full duration-200 p-4 group">
+              <FaCartShopping />
+              <span className="absolute top-0 right-0 group-hover:-top-2 group-hover:-right-2 text-amber-900 font-medium transition-all duration-300">
+                {cartItems.length}
+              </span>
+            </button>
+
             </div>
             <div className="lg:hidden" onClick={() => setOpen(!open)}>
               <TbMenu2 className="text-4xl" />
