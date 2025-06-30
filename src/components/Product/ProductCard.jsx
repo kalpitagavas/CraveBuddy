@@ -65,8 +65,8 @@ const ProductCard = ({ product, layout = 'grid' }) => {
           </span>
           <button
   onClick={() => {
-    addToCart(product);   // ➕ Add to cart
-    toggleCart();         // 🛒 Open cart drawer
+    addToCart(product);   
+    toggleCart();         
   }}
   className="flex items-center gap-1 bg-secondary text-white text-xs px-3 py-1.5 rounded hover:bg-amber-700 transition"
 >
