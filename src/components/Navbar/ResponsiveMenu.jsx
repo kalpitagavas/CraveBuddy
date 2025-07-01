@@ -25,7 +25,7 @@ const ResponsiveMenu = ({ open }) => {
       <AnimatePresence mode="wait">
         {open && (
           <motion.div
-            className="absolute top-20 left-0 w-full h-screen z-20"
+            className="absolute top-20 left-0 w-full h-screen z-20 m-6 -ml-1"
             initial="hidden"
             animate="visible"
             exit="exit"

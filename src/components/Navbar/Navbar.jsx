@@ -9,7 +9,7 @@ const NavbarMenu = [
   { id: 1, title: "Home", link: "/" },
   { id: 2, title: "Product", link: "/products" },
   { id: 3, title: "About", link: "#" },
-  { id: 4, title: "Shop", link: "#" },
+  { id: 4, title: "WishList", link: "/wishlist" },
   { id: 5, title: "Contact", link: "#" },
 ];
 

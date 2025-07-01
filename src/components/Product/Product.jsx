@@ -7,7 +7,7 @@ const Products = () => {
   const [view, setView] = useState('grid'); // 'grid' or 'list'
 
   return (
-    <div className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 px-4 flex flex-col lg:flex-row gap-6">
+    <div className="min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-40 px-4 flex flex-col lg:flex-row gap-6">
       {/* Main content */}
       <div className="w-full lg:w-[70%]">
         {/* Toggle Buttons */}
