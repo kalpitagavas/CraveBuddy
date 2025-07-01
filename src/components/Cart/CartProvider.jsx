@@ -1,32 +1,35 @@
-import React from 'react'
+import React from "react";
 
-import { useContext,useState,createContext } from 'react'
-
+import { useContext, useState, createContext } from "react";
 
 //global box creation
-const cartContext=createContext();
+const cartContext = createContext();
 export function CartProvider({ children }) {
-    const [cartItems,setCartItems]=useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false); // for cart drawer
 
-  function  addToCart(item){
-    setCartItems((prev)=>[...prev,item])
+  function addToCart(item) {
+    setCartItems((prev) => {
+      const alreadyInList = prev.some((i) => i.id === item.id);
+      return alreadyInList ? prev : [...prev, item];
+    });
   }
-  function removeFromCart(index){
-    const newitem=[...cartItems]
-    newitem.splice(index,1)
-   setCartItems(newitem)
+  function removeFromCart(index) {
+    const newitem = [...cartItems];
+    newitem.splice(index, 1);
+    setCartItems(newitem);
   }
-function toggleCart(){
-  setIsOpen(!isOpen)
-}
+  function toggleCart() {
+    setIsOpen(!isOpen);
+  }
   return (
-    <cartContext.Provider value={{cartItems,addToCart, removeFromCart, isOpen, toggleCart}}>
+    <cartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, isOpen, toggleCart }}
+    >
       {children}
     </cartContext.Provider>
-  )
+  );
 }
-export function useCart(){
-  return useContext(cartContext)
+export function useCart() {
+  return useContext(cartContext);
 }
-

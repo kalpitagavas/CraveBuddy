@@ -1,9 +1,10 @@
-import React from 'react';
-import { useWishList } from './WsihListProvider';
+import React from "react";
+import { useWishList } from "./WsihListProvider";
+import { useCart } from "../Cart/CartProvider";
 
 const WishListView = () => {
   const { wishlistItems, removeFromWishList } = useWishList();
-
+  const { addToCart, toggleCart, isOpen } = useCart();
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 mt-32">
       <h2 className="text-2xl font-bold mb-6">Your Wishlist</h2>
@@ -13,7 +14,10 @@ const WishListView = () => {
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {wishlistItems.map((item, index) => (
-            <li key={item.id} className="bg-white shadow-md rounded-xl p-4 flex flex-col">
+            <li
+              key={item.id}
+              className="bg-white shadow-md rounded-xl p-4 flex flex-col"
+            >
               <img
                 src={item.image}
                 alt={item.name}
@@ -22,8 +26,15 @@ const WishListView = () => {
               <p className="font-semibold text-lg text-gray-800">{item.name}</p>
               <p className="text-sm text-gray-600 mt-1 mb-4">₹{item.price}</p>
               <button
+                onClick={() => {
+                  addToCart(item);
+                }}
+              >
+                Add To Cart
+              </button>
+              <button
                 onClick={() => removeFromWishList(index)}
-                className="mt-auto bg-red-500 hover:bg-red-600 text-white py-2 rounded-md"
+                className="mt-auto bg-secondary hover:bg-secondary text-white py-2 rounded-md"
               >
                 Remove
               </button>
