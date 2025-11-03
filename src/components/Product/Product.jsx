@@ -1,10 +1,28 @@
-import React, { useState } from 'react';
-import products from './data/products';
+import React, { useState, useEffect } from 'react';
+import allProducts from './data/products'; // Renamed to avoid confusion
 import ProductCard from './ProductCard';
-import { FaThLarge, FaBars } from 'react-icons/fa'; // icons for grid/list view
+import ProductCardSkeleton from './ProductCardSkeleton'; // <-- Import the skeleton
+import { FaThLarge, FaBars } from 'react-icons/fa';
 
 const Products = () => {
-  const [view, setView] = useState('grid'); // 'grid' or 'list'
+  const [view, setView] = useState('grid');
+  const [products, setProducts] = useState([]); // <-- Start with empty products
+  const [isLoading, setIsLoading] = useState(true); 
+
+  // Simulate fetching data when the component mounts
+  useEffect(() => {
+    // Set loading to true initially
+    setIsLoading(true);
+
+    // Simulate a 2-second network delay
+    const timer = setTimeout(() => {
+      setProducts(allProducts); // Load the actual products
+      setIsLoading(false); // Set loading to false
+    }, 2000); // 2 seconds
+
+    // Cleanup function to clear the timer if the component unmounts
+    return () => clearTimeout(timer);
+  }, []); // The empty array [] means this effect runs only once
 
   return (
     <div className="min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-40 px-4 flex flex-col lg:flex-row gap-6">
@@ -12,21 +30,22 @@ const Products = () => {
       <div className="w-full lg:w-[70%]">
         {/* Toggle Buttons */}
         <div className="flex justify-end mb-4 gap-2">
-          <button
-            onClick={() => setView('grid')}
-            className={`p-2 rounded border ${view === 'grid' ? 'bg-black text-white' : 'bg-white text-gray-700'} hover:bg-black hover:text-white transition`}
-          >
-            <FaThLarge />
-          </button>
-          <button
-            onClick={() => setView('list')}
-            className={`p-2 rounded border ${view === 'list' ? 'bg-black text-white' : 'bg-white text-gray-700'} hover:bg-black hover:text-white transition`}
-          >
-            <FaBars />
-          </button>
+          {/* ... (your button code remains the same) ... */}
+           <button
+             onClick={() => setView('grid')}
+             className={`p-2 rounded border ${view === 'grid' ? 'bg-black text-white' : 'bg-white text-gray-700'} hover:bg-black hover:text-white transition`}
+           >
+             <FaThLarge />
+           </button>
+           <button
+             onClick={() => setView('list')}
+             className={`p-2 rounded border ${view === 'list' ? 'bg-black text-white' : 'bg-white text-gray-700'} hover:bg-black hover:text-white transition`}
+           >
+             <FaBars />
+           </button>
         </div>
 
-        {/* Product Display */}
+        {/* Product Display: Conditionally render skeletons or products */}
         <div
           className={`${
             view === 'grid'
@@ -34,13 +53,19 @@ const Products = () => {
               : 'flex flex-col gap-4'
           }`}
         >
-          {products.map(product => (
-            <ProductCard key={product.id} product={product} layout={view} />
-          ))}
+          {isLoading
+            ? // If loading, show 10 skeleton cards
+              [...Array(10)].map((_, index) => (
+                <ProductCardSkeleton key={index} layout={view} />
+              ))
+            : // If not loading, show the actual product cards
+              products.map(product => (
+                <ProductCard key={product.id} product={product} layout={view} />
+              ))}
         </div>
       </div>
 
-      {/* Sidebar */}
+    {/* Sidebar */}
       <div className="w-full lg:w-[30%] bg-gray-100 rounded-md p-4 shadow-sm space-y-4">
         <h2 className="text-lg font-semibold text-gray-800 mb-2">Sponsored</h2>
 
@@ -66,5 +91,4 @@ const Products = () => {
     </div>
   );
 };
-
 export default Products;

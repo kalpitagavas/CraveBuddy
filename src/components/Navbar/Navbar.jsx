@@ -8,9 +8,9 @@ import { useCart } from "../Cart/CartProvider";
 const NavbarMenu = [
   { id: 1, title: "Home", link: "/" },
   { id: 2, title: "Product", link: "/products" },
-  { id: 3, title: "About", link: "#" },
+  { id: 3, title: "About", link: "/about" },
   { id: 4, title: "WishList", link: "/wishlist" },
-  { id: 5, title: "Contact", link: "#" },
+   {id:6,title:"Contact",link:"/contact"}
 ];
 
 const Navbar = () => {
@@ -73,7 +73,7 @@ const Navbar = () => {
               </ul>
 
             <button onClick={toggleCart} className="relative text-2xl cursor-pointer hover:bg-primary hover:text-white rounded-full duration-200 p-4 group">
-              <FaCartShopping />
+             <Link to="/cart" className="relative"><FaCartShopping /></Link> 
               <span className="absolute top-0 right-0 group-hover:-top-2 group-hover:-right-2 text-amber-900 font-medium transition-all duration-300">
                 {cartItems.length}
               </span>

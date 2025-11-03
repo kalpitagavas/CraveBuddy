@@ -1,7 +1,7 @@
 import React from "react";
 import { useCart } from "./CartProvider";
 import { DeleteIcon } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const CartDrawer = () => {
   const { cartItems, removeFromCart, isOpen, toggleCart } = useCart();
 
